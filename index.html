@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rgb</title>
+    <style>
+        button {
+            width: 25%;
+            height: 50px;
+            position: absolute;
+            top: 40dvh;
+            left: 38%;
+            border: none;
+        }
+
+        i#pista {
+            position: absolute;
+            top: 1dvh;
+            right: 2%;
+        }
+
+        input[type=range] {
+            width: 300px;
+        }
+        span{
+            margin-right: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <span>
+        <b>rojo:</b><input type="range" min="0" max="255" value="50" id="r" onchange="color()"><i id="Red"></i>
+    </span>
+    <span>
+        <b>verde:</b><input type="range" min="0" max="255" value="50" id="g" onchange="color()"><i id="Green"></i>
+    </span>
+    <span>
+        <b>azul:</b><input type="range" min="0" max="255" value="50" id="b" onchange="color()"><i id="Blue"></i>
+    </span>
+    <button id="surprise" onclick="suerte()">color sorpresa</button>
+    <i id="pista"> </i>
+    <script>
+        function color() {
+            r = document.getElementById("r").value
+            g = document.getElementById("g").value
+            b = document.getElementById("b").value
+            document.body.style.background = "rgb(" + r + "," + g + "," + b + ")"
+            document.getElementById("Red").innerHTML = r
+            document.getElementById("Green").innerHTML = g
+            document.getElementById("Blue").innerHTML = b
+        }
+        function suerte() {
+            R = Math.floor(Math.random() * 256)
+            G = Math.floor(Math.random() * 256)
+            B = Math.floor(Math.random() * 256)
+            document.getElementById("surprise").style.background = "rgb(" + R + "," + G + "," + B + ")"
+            document.getElementById("pista").innerHTML = R + "," + G + "," + B
+        }
+    </script>
+</body>
+
+</html>
