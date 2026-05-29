@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rgb</title>
     <style>
-        button {
+        #surprise{
             width: 25%;
             height: 50px;
             position: absolute;
@@ -42,6 +42,9 @@
     </span>
     <button id="surprise" onclick="suerte()">color sorpresa</button>
     <i id="pista"> </i>
+    <button onclick="music()">music</button>
+    <button onclick="stopp()">stop</button>
+    <audio src="WoW.mp3" id="BONSAI"></audio>
     <script>
         function color() {
             r = document.getElementById("r").value
@@ -52,6 +55,12 @@
             document.getElementById("Green").innerHTML = g
             document.getElementById("Blue").innerHTML = b
         }
+         function music() {
+        document.getElementById("BONSAI").play()
+      }
+      function stopp() {
+        document.getElementById("BONSAI").pause()
+      }
         function suerte() {
             R = Math.floor(Math.random() * 256)
             G = Math.floor(Math.random() * 256)
